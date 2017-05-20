@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<title>***** Juego circulación *******</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="estilos.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" title="Pozolería RSS" type="application/rss+xml" href="/feed.rss" />
+<style type="text/css">
+    td, input{
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    body{
+        background: url("img/background.jpg");
+        color: white;
+        font-family: arial;
+        font-size: 20px;
+    }
+    #puntos{
+        background: red;
+        font-weight: bold;
+        padding: 10px;
+        position: fixed;
+    }
+
+</style>
+<script src="jquery.js"></script>
+<script>
+var puntos = 0;
+$(document).ready(function(){
+    $("#crucigrama input").each(function(){
+        var attr = $(this).attr("value-real");
+        if(!(typeof attr !== typeof undefined && attr !== false)){
+            $(this).hide();
+        }
+    });
+
+    $("input").keyup(function(){
+        if($(this).attr("value-real")==$(this).val()){
+            puntos = puntos + 1;
+            $("#puntos").text("Puntos: " + puntos);
+            $(this).prop('disabled', true);
+        }
+        else{
+            $(this).val("");
+        }
+    });
+
+    $("#pregunta1 .ok").click(function(){
+        //$("#pregunta1 input").prop('disabled', true);
+        $("#pregunta1 input").fadeOut();
+        $("#pregunta1 .ok").parent().css("background", "red");
+
+        puntos = puntos + 1;
+        $("#puntos").text("Puntos: " + puntos);
+    })
+
+
+    $("#pregunta2 .ok").click(function(){
+        //$("#pregunta1 input").prop('disabled', true);
+        $("#pregunta2 input").fadeOut();
+        $("#pregunta2 .ok").parent().css("background", "red");
+
+        puntos = puntos + 1;
+        $("#puntos").text("Puntos: " + puntos);
+    })
+
+    $("#pregunta3 .ok").click(function(){
+        //$("#pregunta1 input").prop('disabled', true);
+        $("#pregunta3 input").fadeOut();
+        $("#pregunta3 .ok").parent().css("background", "red");
+
+        puntos = puntos + 1;
+        $("#puntos").text("Puntos: " + puntos);
+    })
+
+    $("#pregunta4 .ok").click(function(){
+        //$("#pregunta1 input").prop('disabled', true);
+        $("#pregunta4 input").fadeOut();
+        $("#pregunta4 .ok").parent().css("background", "red");
+
+        puntos = puntos + 1;
+        $("#puntos").text("Puntos: " + puntos);
+    })
+
+    $("#pregunta5 .ok").click(function(){
+        //$("#pregunta1 input").prop('disabled', true);
+        $("#pregunta5 input").fadeOut();
+        $("#pregunta5 .ok").parent().css("background", "red");
+
+        puntos = puntos + 1;
+        $("#puntos").text("Puntos: " + puntos);
+    })
+});
+</script>
+</head>
+
+<body>
+    <div id="puntos">Puntos: 0</div>
+    <br>
+    <h1>Crucigrama</h1>
+    <table id="crucigrama">
+        <tbody>
+            <tr id="0">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="1">
+                <td></td>
+                <td><input id="1"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="c"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11"></input></td>
+            </tr>
+            <tr id="2">
+                <td></td>
+                <td><input id="1">1</input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="o"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8">3</input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11"></input></td>
+            </tr>
+            <tr id="3">
+                <td>2</td>
+                <td><input id="1" value-real="a"></input></td>
+                <td><input id="2" value-real="r"></input></td>
+                <td><input id="3" value-real="t"></input></td>
+                <td><input id="4" value-real="e"></input></td>
+                <td><input id="5" value-real="r"></input></td>
+                <td><input id="6" value-real="i"></input></td>
+                <td><input id="7" value-real="a"></input></td>
+                <td><input id="8" value-real="s"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11"></input></td>
+            </tr>
+            <tr id="4">
+                <td></td>
+                <td><input id="1" value-real="o"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="a"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8" value-real="a"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11">6</input></td>
+            </tr>
+            <tr id="5">
+                <td></td>
+                <td><input id="1" value-real="r"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="z"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8" value-real="n"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11" value-real="p"></input></td>
+            </tr>
+            <tr id="6">
+                <td></td>
+                <td><input id="1" value-real="t"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="o"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8" value-real="g"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11" value-real="l"></input></td>
+            </tr>
+            <tr id="7">
+                <td></td>
+                <td><input id="1" value-real="a"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5" value-real="n"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8" value-real="r"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11" value-real="a"></input></td>
+            </tr>
+            <tr id="8">
+                <td></td>
+                <td><input id="1"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5"></input></td>
+                <td><input id="6">5</input></td>
+                <td><input id="7" value-real="v"></input></td>
+                <td><input id="8" value-real="e"></input></td>
+                <td><input id="9" value-real="n"></input></td>
+                <td><input id="10" value-real="a"></input></td>
+                <td><input id="11" value-real="s"></input></td>
+            </tr>
+            <tr id="9">
+                <td></td>
+                <td><input id="1"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11" value-real="m"></input></td>
+            </tr>
+            <tr id="10">
+                <td></td>
+                <td><input id="1"></input></td>
+                <td><input id="2"></input></td>
+                <td><input id="3"></input></td>
+                <td><input id="4"></input></td>
+                <td><input id="5"></input></td>
+                <td><input id="6"></input></td>
+                <td><input id="7"></input></td>
+                <td><input id="8"></input></td>
+                <td><input id="9"></input></td>
+                <td><input id="10"></input></td>
+                <td><input id="11" value-real="a"></input></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ol>
+        <li>Arteria principal (Aorta)</li>
+        <li>Arteria en plural (Arterias)</li>
+        <li>Líquido vital (Sangre)</li>
+        <li>Músculo que bombéa sangre (Corazón)</li>
+        <li>Tuverías de la sangre (Venas)</li>
+        <li>La fracción líquida y acelular de la sangre (Plasma)</li>
+    </ol>
+
+    <hr></hr>
+
+    <h1>Quiz</h1>
+
+    <div id="pregunta1" class="pregunta">
+        <h5>¿Qué función cumple el sistema circulatorio?</h5>
+        <label><input type="radio" name="gender" value="male"  autocomplete="false"> Sangre, vasos sanguíneos y corazón</label><br>
+        <label><input type="radio" name="gender" value="female" class="ok"  autocomplete="false">  Tráquea, sangre y linfa.</label><br>
+        <label><input type="radio" name="gender" value="other" autocomplete="false"> Corazón, Riñones y vasos sanguíneos.</label>
+    </div>
+
+    <div id="pregunta2" class="pregunta">
+        <h5>¿De qué está formado el sistema circulatorio?</h5>
+        <label><input type="radio" name="gender" value="male"  autocomplete="false"> Porque se encarga de contaminar nuestro organismo. </label><br>
+        <label><input type="radio" name="gender" value="female" class="ok"  autocomplete="false">  Porque tiene venas y arterias.</label><br>
+        <label><input type="radio" name="gender" value="other" autocomplete="false"> Porque no nos produce hambre. </label>
+    </div>
+
+    <div id="pregunta3" class="pregunta">
+        <h5>¿Por qué es importante el corazón?</h5>
+        <label><input type="radio" name="gender" value="male"  autocomplete="false"> Por la transformación de enzimas.  </label><br>
+        <label><input type="radio" name="gender" value="female"  autocomplete="false">  Por la obstrucción de los ventrículos. </label><br>
+        <label><input type="radio" name="gender" value="other"  class="ok" autocomplete="false">Por la obstrucción de una de las arterias coronarias </label>
+    </div>
+
+        <div id="pregunta4" class="pregunta">
+            <h5>¿De qué esta formada la sangre?</h5>
+            <label><input type="radio" name="gender" value="male" class="ok"   autocomplete="false"> Por la transformación de enzimas.  </label><br>
+            <label><input type="radio" name="gender" value="female"  autocomplete="false">  Es un sistema de cicatrización. </label><br>
+            <label><input type="radio" name="gender" value="other" autocomplete="false">Una disminución de sangre, que se encuentra en los vasos sanguíneos.  </label>
+        </div>
+
+                <div id="pregunta5" class="pregunta">
+                    <h5>Especificamente, ¿Qué es la anemia?</h5>
+                    <label><input type="radio" name="gender" value="male" class="ok"   autocomplete="false">Por enfermedades infecciosas, carencias de vitamina B12 o de ácido fólico, mala alimentación, la parasitosis y por falta de hierro.  </label><br>
+                    <label><input type="radio" name="gender" value="female"  autocomplete="false">  Por carencia de oxígeno y de vitaminas. </label><br>
+                    <label><input type="radio" name="gender" value="other" autocomplete="false">Aumento de la glucosa y mala alimentación.  </label>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" width="500" height="350">
+                <param name=movie value="archivo.swf">
+                <param name=quality value=high>
+                <embed src="http://cienciasnaturales.es/CIRCULATORIO.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"style="width:1224px; height: 800px">
+                </embed>
+                </object>
+</body>
+</html>
